@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package numberservice;
+
+option go_package = "github.com/palash287gupta/learn_and_kount_devops_2021_12_01_grpc4/dual-streaming/numberservice;numberservice";
+
+service NumberService {
+  rpc GetSquares(stream GetSquaresRequest) returns (stream GetSquaresResponse) {};
+}
+
+message GetSquaresRequest {
+  int64 num = 1;
+}
+
+message GetSquaresResponse {
+  int64 num = 1;
+}
